@@ -3,7 +3,7 @@ import axios from "axios";
 import { ref, onMounted } from "vue";
 
 // リアクティブなデータ
-const title = ref("うまのなまえ");
+const title = ref("うまのなまえ(Read)");
 const db = ref([]);
 
 // Firestore からデータを取得する関数
