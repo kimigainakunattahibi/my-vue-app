@@ -12,7 +12,6 @@ import HelloWorld from './components/HelloWorld.vue'
 
       <nav>
         <RouterLink to="/">Read</RouterLink>
-        <RouterLink to="/Delete">Delete</RouterLink>
         <RouterLink to="/Create">Create</RouterLink>
       </nav>
     </div>

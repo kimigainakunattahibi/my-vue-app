@@ -1,11 +1,9 @@
 <script setup>
 import axios from "axios";
 import { ref } from "vue";
-
 // ページタイトルと投稿状態
 const title = ref("馬の名前と性別を入力(書き込み2：Create)");
 const resText = ref("未完了");
-
 // 投稿データのリアクティブなオブジェクト
 const post = ref({
   fields: {
@@ -13,13 +11,11 @@ const post = ref({
     gender: { stringValue: "" }, // 性別
   },
 });
-
 // Firestore にデータを投稿する関数
 const postData = async () => {
   const project1 = "my-vue-app-56f5a"; // Firebase プロジェクトID
   const collection1 = "uma"; // Firebase のコレクション名
   const url = `https://firestore.googleapis.com/v1/projects/${project1}/databases/(default)/documents/${collection1}`;
-
   try {
     const result = await axios.post(url, post.value);
     console.log(result.data); // 結果をコンソールに出力
