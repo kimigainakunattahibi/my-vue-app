@@ -28,13 +28,38 @@ onMounted(getData);
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <ul>
-      <li v-for="dbItem in db" :key="dbItem.name">
-        {{ dbItem.fields.name.stringValue }}
-      </li>
-      <li v-for="dbItem in db" :key="dbItem.gender">
-        {{ dbItem.fields.gender.stringValue }}
-      </li>
-    </ul>
+
+    <div class="card-container">
+      <div v-for="dbItem in db" :key="dbItem.name" class="card">
+        <h3>名前:{{ dbItem.fields.name.stringValue }}</h3>
+        <p>性別: {{ dbItem.fields.gender.stringValue }}</p>
+      </div>
+    </div>
+  </div>
+
+<!--編集画面遷移用-->
+  <div class="Link">
+  <RouterLink to="/Update">Update</RouterLink>
   </div>
 </template>
+
+<style>
+.Link{
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #2b0d72;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 200px;
+}
+</style>
